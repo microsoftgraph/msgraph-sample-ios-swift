@@ -8,6 +8,7 @@
 
 import Foundation
 import MSAL
+import MSGraphMSALAuthProvider
 
 class AuthenticationManager {
     
@@ -37,8 +38,10 @@ class AuthenticationManager {
         }
     }
     
-    public func getPublicClient() -> MSALPublicClientApplication? {
-        return self.publicClient
+    public func getGraphAuthProvider() -> MSALAuthenticationProvider? {
+        // Create an MSAL auth provider for use with the Graph client
+        return MSALAuthenticationProvider(publicClientApplication: self.publicClient,
+                                          andScopes: self.graphScopes)
     }
     
     public func getTokenInteractively(completion: @escaping(_ accessToken: String?, Error?) -> Void) {

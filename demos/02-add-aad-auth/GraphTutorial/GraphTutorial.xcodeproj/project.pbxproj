@@ -18,6 +18,7 @@
 		967354A42306065000DB3083 /* GraphTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967354A32306065000DB3083 /* GraphTutorialUITests.swift */; };
 		96A6709B230B0C26001D4C34 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6709A230B0C26001D4C34 /* AuthenticationManager.swift */; };
 		96D924E6230B308100B03E6F /* AuthSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D924E5230B308100B03E6F /* AuthSettings.plist */; };
+		96D924E8230B3CB800B03E6F /* GraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D924E7230B3CB800B03E6F /* GraphManager.swift */; };
 		96FCBFF32306EEF100A22E4E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FCBFF22306EEF100A22E4E /* WelcomeViewController.swift */; };
 		96FCBFF523073CC200A22E4E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FCBFF423073CC200A22E4E /* CalendarViewController.swift */; };
 		96FCBFF723074AAD00A22E4E /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FCBFF623074AAD00A22E4E /* SpinnerViewController.swift */; };
@@ -65,6 +66,7 @@
 		967354A52306065000DB3083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96A6709A230B0C26001D4C34 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		96D924E5230B308100B03E6F /* AuthSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AuthSettings.plist; sourceTree = "<group>"; };
+		96D924E7230B3CB800B03E6F /* GraphManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphManager.swift; sourceTree = "<group>"; };
 		96FCBFF22306EEF100A22E4E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		96FCBFF423073CC200A22E4E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		96FCBFF623074AAD00A22E4E /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				96FCBFF623074AAD00A22E4E /* SpinnerViewController.swift */,
 				96A6709A230B0C26001D4C34 /* AuthenticationManager.swift */,
 				96D924E5230B308100B03E6F /* AuthSettings.plist */,
+				96D924E7230B3CB800B03E6F /* GraphManager.swift */,
 			);
 			path = GraphTutorial;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				96A6709B230B0C26001D4C34 /* AuthenticationManager.swift in Sources */,
 				967354842306064F00DB3083 /* AppDelegate.swift in Sources */,
 				96FCBFF723074AAD00A22E4E /* SpinnerViewController.swift in Sources */,
+				96D924E8230B3CB800B03E6F /* GraphManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
