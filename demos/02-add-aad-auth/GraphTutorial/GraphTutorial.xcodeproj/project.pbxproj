@@ -16,6 +16,8 @@
 		9673548E2306064F00DB3083 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9673548C2306064F00DB3083 /* LaunchScreen.storyboard */; };
 		967354992306065000DB3083 /* GraphTutorialTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967354982306065000DB3083 /* GraphTutorialTests.swift */; };
 		967354A42306065000DB3083 /* GraphTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967354A32306065000DB3083 /* GraphTutorialUITests.swift */; };
+		96A6709B230B0C26001D4C34 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A6709A230B0C26001D4C34 /* AuthenticationManager.swift */; };
+		96D924E6230B308100B03E6F /* AuthSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D924E5230B308100B03E6F /* AuthSettings.plist */; };
 		96FCBFF32306EEF100A22E4E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FCBFF22306EEF100A22E4E /* WelcomeViewController.swift */; };
 		96FCBFF523073CC200A22E4E /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FCBFF423073CC200A22E4E /* CalendarViewController.swift */; };
 		96FCBFF723074AAD00A22E4E /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FCBFF623074AAD00A22E4E /* SpinnerViewController.swift */; };
@@ -61,6 +63,8 @@
 		9673549F2306065000DB3083 /* GraphTutorialUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphTutorialUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		967354A32306065000DB3083 /* GraphTutorialUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTutorialUITests.swift; sourceTree = "<group>"; };
 		967354A52306065000DB3083 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96A6709A230B0C26001D4C34 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		96D924E5230B308100B03E6F /* AuthSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AuthSettings.plist; sourceTree = "<group>"; };
 		96FCBFF22306EEF100A22E4E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		96FCBFF423073CC200A22E4E /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		96FCBFF623074AAD00A22E4E /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +143,8 @@
 				96FCBFF22306EEF100A22E4E /* WelcomeViewController.swift */,
 				96FCBFF423073CC200A22E4E /* CalendarViewController.swift */,
 				96FCBFF623074AAD00A22E4E /* SpinnerViewController.swift */,
+				96A6709A230B0C26001D4C34 /* AuthenticationManager.swift */,
+				96D924E5230B308100B03E6F /* AuthSettings.plist */,
 			);
 			path = GraphTutorial;
 			sourceTree = "<group>";
@@ -285,6 +291,7 @@
 				9673548E2306064F00DB3083 /* LaunchScreen.storyboard in Resources */,
 				9673548B2306064F00DB3083 /* Assets.xcassets in Resources */,
 				967354892306064F00DB3083 /* Main.storyboard in Resources */,
+				96D924E6230B308100B03E6F /* AuthSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +405,7 @@
 				96FCBFF523073CC200A22E4E /* CalendarViewController.swift in Sources */,
 				96FCBFF32306EEF100A22E4E /* WelcomeViewController.swift in Sources */,
 				967354862306064F00DB3083 /* SignInViewController.swift in Sources */,
+				96A6709B230B0C26001D4C34 /* AuthenticationManager.swift in Sources */,
 				967354842306064F00DB3083 /* AppDelegate.swift in Sources */,
 				96FCBFF723074AAD00A22E4E /* SpinnerViewController.swift in Sources */,
 			);
