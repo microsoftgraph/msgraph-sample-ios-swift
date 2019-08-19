@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MSAL
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,6 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        guard let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String else {
+            return false
+        }
+        
+        return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApplication)
+    }
 }
 

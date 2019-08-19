@@ -37,6 +37,10 @@ class AuthenticationManager {
         }
     }
     
+    public func getPublicClient() -> MSALPublicClientApplication? {
+        return self.publicClient
+    }
+    
     public func getTokenInteractively(completion: @escaping(_ accessToken: String?, Error?) -> Void) {
         // Call acquireToken to open a browser so the user can sign in
         publicClient?.acquireToken(forScopes: self.graphScopes, completionBlock: {
@@ -82,7 +86,7 @@ class AuthenticationManager {
         }
     }
     
-    public func signOut() {
+    public func signOut() -> Void {
         do {
             // Remove all accounts from the cache
             let accounts = try publicClient?.allAccounts()
