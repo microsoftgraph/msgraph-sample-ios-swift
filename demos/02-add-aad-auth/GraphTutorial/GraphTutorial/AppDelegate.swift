@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  GraphTutorial
 //
-//  Created by Jason Johnston on 8/15/19.
-//  Copyright © 2019 Jason Johnston. All rights reserved.
+//  Copyright © 2019 Microsoft. All rights reserved.
+//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 //
 
 import UIKit
@@ -43,11 +43,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+
         guard let sourceApplication = options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String else {
             return false
         }
-        
+
         return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApplication)
     }
 }

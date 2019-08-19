@@ -2,8 +2,8 @@
 //  SpinnerViewController.swift
 //  GraphTutorial
 //
-//  Created by Jason Johnston on 8/16/19.
-//  Copyright © 2019 Jason Johnston. All rights reserved.
+//  Copyright © 2019 Microsoft. All rights reserved.
+//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 //
 
 import UIKit

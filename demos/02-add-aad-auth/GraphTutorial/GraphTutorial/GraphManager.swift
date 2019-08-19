@@ -2,8 +2,8 @@
 //  GraphManager.swift
 //  GraphTutorial
 //
-//  Created by Jason Johnston on 8/19/19.
-//  Copyright © 2019 Jason Johnston. All rights reserved.
+//  Copyright © 2019 Microsoft. All rights reserved.
+//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 //
 
 import Foundation
@@ -11,16 +11,16 @@ import MSGraphClientSDK
 import MSGraphClientModels
 
 class GraphManager {
-    
+
     // Implement singleton pattern
     static let instance = GraphManager()
-    
+
     private let client: MSHTTPClient?
-    
+
     private init() {
         client = MSClientFactory.createHTTPClient(with: AuthenticationManager.instance.getGraphAuthProvider())
     }
-    
+
     public func getMe(completion: @escaping(MSGraphUser?, Error?) -> Void) {
         // GET /me
         let meRequest = NSMutableURLRequest(url: URL(string: "\(MSGraphBaseURL)/me")!)
@@ -30,7 +30,7 @@ class GraphManager {
                 completion(nil, graphError)
                 return
             }
-            
+
             do {
                 // Deserialize response as a user
                 let user = try MSGraphUser(data: meData)
@@ -39,7 +39,7 @@ class GraphManager {
                 completion(nil, error)
             }
         })
-        
+
         // Execute the request
         meDataTask?.execute()
     }
