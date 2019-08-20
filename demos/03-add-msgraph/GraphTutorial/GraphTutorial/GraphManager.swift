@@ -44,7 +44,7 @@ class GraphManager {
         meDataTask?.execute()
     }
     
-    public func getEvents(completion: @escaping(Data?, Error?) -> Void) {
+    public func getEvents(completion: @escaping([MSGraphEvent]?, Error?) -> Void) {
         // GET /me/events?$select='subject,organizer,start,end'$orderby=createdDateTime DESC
         // Only return these fields in results
         let select = "$select=subject,organizer,start,end"
@@ -58,12 +58,7 @@ class GraphManager {
                 return
             }
             
-            // TEMPORARY
-            completion(eventsData, nil)
-            /*
             do {
-                let json = String(data: eventsData, encoding: String.Encoding.utf8)
-                print("Data: \(json)")
                 // Deserialize response as events collection
                 let eventsCollection = try MSCollection(data: eventsData)
                 var eventArray: [MSGraphEvent] = []
@@ -84,7 +79,7 @@ class GraphManager {
                 completion(eventArray, nil)
             } catch {
                 completion(nil, error)
- } */
+            }
         })
         
         // Execute the request

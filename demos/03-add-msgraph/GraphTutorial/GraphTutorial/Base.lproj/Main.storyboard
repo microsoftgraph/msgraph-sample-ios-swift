@@ -45,44 +45,61 @@
         <scene sceneID="71j-g1-sXm">
             <objects>
                 <viewController id="XTQ-t5-2mR" customClass="CalendarViewController" customModule="GraphTutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="qXS-Df-V4M">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="S8c-y7-dGh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fEj-Fx-Ecl">
-                                <rect key="frame" x="20" y="44" width="374" height="769"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eBq-ee-8YP">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="769"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="eBq-ee-8YP" firstAttribute="leading" secondItem="fEj-Fx-Ecl" secondAttribute="leading" id="4DM-VE-spO"/>
-                                    <constraint firstAttribute="bottom" secondItem="eBq-ee-8YP" secondAttribute="bottom" id="77v-4t-bt9"/>
-                                    <constraint firstItem="eBq-ee-8YP" firstAttribute="centerX" secondItem="fEj-Fx-Ecl" secondAttribute="centerX" id="OQc-1n-qPp"/>
-                                    <constraint firstItem="eBq-ee-8YP" firstAttribute="centerY" secondItem="fEj-Fx-Ecl" secondAttribute="centerY" id="WyS-Hm-G1L"/>
-                                    <constraint firstItem="eBq-ee-8YP" firstAttribute="top" secondItem="fEj-Fx-Ecl" secondAttribute="top" id="XK8-7X-W1n"/>
-                                    <constraint firstAttribute="trailing" secondItem="eBq-ee-8YP" secondAttribute="trailing" id="knC-iK-pv1"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="fEj-Fx-Ecl" firstAttribute="bottom" secondItem="xhB-fe-MWc" secondAttribute="bottom" id="GB0-Yq-s4y"/>
-                            <constraint firstItem="fEj-Fx-Ecl" firstAttribute="leading" secondItem="qXS-Df-V4M" secondAttribute="leadingMargin" id="TsZ-RM-gMX"/>
-                            <constraint firstItem="fEj-Fx-Ecl" firstAttribute="trailing" secondItem="qXS-Df-V4M" secondAttribute="trailingMargin" id="Y6W-aK-QNE"/>
-                            <constraint firstItem="fEj-Fx-Ecl" firstAttribute="top" secondItem="xhB-fe-MWc" secondAttribute="top" id="ekf-aU-oVn"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xhB-fe-MWc"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EventCell" rowHeight="97" id="oAE-Ak-g22" customClass="CalendarTableViewCell" customModule="GraphTutorial" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="oAE-Ak-g22" id="QEP-aE-Orp">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="96.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subject" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KlD-8F-9w8">
+                                            <rect key="frame" x="20" y="11" width="59" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organizer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F63-nb-NRi">
+                                            <rect key="frame" x="20" y="40" width="56" height="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DUy-38-5bn">
+                                            <rect key="frame" x="20" y="63" width="28" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="nSH-gH-UHK"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KlD-8F-9w8" firstAttribute="leading" secondItem="F63-nb-NRi" secondAttribute="leading" id="0D8-Zq-fBh"/>
+                                        <constraint firstItem="F63-nb-NRi" firstAttribute="top" secondItem="KlD-8F-9w8" secondAttribute="bottom" constant="8" id="JCD-yS-nVN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="DUy-38-5bn" secondAttribute="bottom" constant="8" id="NGg-fK-ZpR"/>
+                                        <constraint firstItem="F63-nb-NRi" firstAttribute="leading" secondItem="DUy-38-5bn" secondAttribute="leading" id="S1z-gb-dne"/>
+                                        <constraint firstItem="KlD-8F-9w8" firstAttribute="top" secondItem="QEP-aE-Orp" secondAttribute="topMargin" id="UUb-E3-H2G"/>
+                                        <constraint firstItem="DUy-38-5bn" firstAttribute="top" secondItem="F63-nb-NRi" secondAttribute="bottom" constant="8" symbolic="YES" id="UlB-kU-PKa"/>
+                                        <constraint firstItem="KlD-8F-9w8" firstAttribute="leading" secondItem="QEP-aE-Orp" secondAttribute="leadingMargin" id="XMg-dI-cMb"/>
+                                        <constraint firstItem="F63-nb-NRi" firstAttribute="top" secondItem="KlD-8F-9w8" secondAttribute="bottom" constant="8" symbolic="YES" id="dFw-N5-eO5"/>
+                                        <constraint firstItem="DUy-38-5bn" firstAttribute="top" secondItem="F63-nb-NRi" secondAttribute="bottom" constant="8" id="mTt-61-iNE"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="durationLabel" destination="DUy-38-5bn" id="Yht-oT-ueD"/>
+                                    <outlet property="organizerLabel" destination="F63-nb-NRi" id="DzT-QL-Az7"/>
+                                    <outlet property="subjectLabel" destination="KlD-8F-9w8" id="VrF-kL-q6O"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <tabBarItem key="tabBarItem" title="Calendar" id="5Gh-z1-ZxA"/>
-                    <connections>
-                        <outlet property="calendarJSON" destination="eBq-ee-8YP" id="Ihw-2M-NIA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ll6-Gy-b1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
