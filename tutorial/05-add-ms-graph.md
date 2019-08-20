@@ -148,7 +148,7 @@ Now you can replace the JSON dump with something to display the results in a use
 
 1. Open **GraphTutorial/Main.storyboard** and locate the **Calendar Scene**. Select the **View** in the **Calendar Scene** and delete it.
 
-    ![]()
+    ![A screenshot of the View in the Calendar Scene](./images/view-in-calendar-scene.png)
 
 1. Add a **Table View** from the **Library** to the **Calendar Scene**.
 1. Select the table view, then select the **Attributes Inspector**. Set **Prototype Cells** to **1**.
