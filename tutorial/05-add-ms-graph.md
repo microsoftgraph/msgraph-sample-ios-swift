@@ -119,7 +119,7 @@ Now you can replace the JSON dump with something to display the results in a use
 
 ### Update CalendarViewController
 
-1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** project named `CalendarTableViewCell.swift`.
+1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** project named `CalendarTableViewCell.swift`. Choose **UITableViewCell** in the **Subclass of** field.
 1. Open **GraphTutorial/CalendarTableViewCell.swift** and add the following code to the `CalendarTableViewCell` class.
 
     ```Swift
