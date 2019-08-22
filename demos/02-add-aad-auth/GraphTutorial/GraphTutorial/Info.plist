@@ -35,6 +35,10 @@
 			</array>
 		</dict>
 	</array>
+	<array>
+			<string>msauthv2</string>
+			<string>msauthv3</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

@@ -34,9 +34,13 @@ In this section you will configure the project for MSAL, create an authenticatio
         </array>
       </dict>
     </array>
+    <array>
+        <string>msauthv2</string>
+        <string>msauthv3</string>
+    </array>
     ```
 
-1. Open **GraphTutorial/AppDelegate.swift** and add the following import statement at the top of the file.
+1. Open **AppDelegate.swift** and add the following import statement at the top of the file.
 
     ```Swift
     import MSAL
@@ -158,7 +162,7 @@ In this section you will configure the project for MSAL, create an authenticatio
 
 ### Add sign-in and sign-out
 
-1. Open the **GraphTutorial/SignInViewController.swift** file and replace its contents with the following code.
+1. Open **SignInViewController.swift** and replace its contents with the following code.
 
     ```Swift
     import UIKit
@@ -223,7 +227,7 @@ In this section you will configure the project for MSAL, create an authenticatio
     }
     ```
 
-1. Open **GraphTutorial/WelcomeViewController.swift** and replace the existing `signOut` function with the following.
+1. Open **WelcomeViewController.swift** and replace the existing `signOut` function with the following.
 
     ```Swift
     @IBAction func signOut() {
@@ -242,7 +246,7 @@ If you sign in to the app, you should see an access token displayed in the outpu
 
 In this section you will create a helper class to hold all of the calls to Microsoft Graph and update the `WelcomeViewController` to use this new class to get the logged-in user.
 
-1. Open the **GraphTutorial/AuthenticationManager.swift** file and add the following function to the `AuthenticationManager` class.
+1. Open **AuthenticationManager.swift** and add the following function to the `AuthenticationManager` class.
 
     ```Swift
     public func getGraphAuthProvider() -> MSALAuthenticationProvider? {
@@ -295,7 +299,7 @@ In this section you will create a helper class to hold all of the calls to Micro
     }
     ```
 
-1. Open the **GraphTutorial/WelcomeViewController.swift** file and add the following `import` statement at the top of the file.
+1. Open **WelcomeViewController.swift** and add the following `import` statement at the top of the file.
 
     ```Swift
     import MSGraphClientModels

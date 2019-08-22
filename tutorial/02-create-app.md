@@ -51,7 +51,7 @@ In this section you will create the views for the app: a sign in page, a tab bar
 
 ### Create sign in page
 
-1. Expand the **GraphTutorial** folder in Xcode, then select the **ViewController.swift** file.
+1. Expand the **GraphTutorial** folder in Xcode, then select **ViewController.swift**.
 1. In the **File Inspector**, change the **Name** of the file to `SignInViewController.swift`.
 
     ![A screenshot of the File Inspector](./images/rename-file.png)

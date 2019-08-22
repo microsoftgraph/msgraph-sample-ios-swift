@@ -6,7 +6,7 @@ In this exercise you will incorporate the Microsoft Graph into the application. 
 
 In this section you will extend the `GraphManager` class to add a function to get the user's events and update `CalendarViewController` to use these new functions.
 
-1. Open **GraphTutorial/GraphManager.swift** file and add the following method to the `GraphManager` class.
+1. Open **GraphManager.swift** and add the following method to the `GraphManager` class.
 
     ```Swift
     public func getEvents(completion: @escaping(Data?, Error?) -> Void) {
@@ -39,7 +39,7 @@ In this section you will extend the `GraphManager` class to add a function to ge
     > - The `select` query parameter limits the fields returned for each events to just those the app will actually use.
     > - The `orderby` query parameter sorts the results by the date and time they were created, with the most recent item being first.
 
-1. Open the **GraphTutorial/CalendarViewController** and replace its entire contents with the following code.
+1. Open **CalendarViewController.swift** and replace its entire contents with the following code.
 
     ```Swift
     import UIKit
@@ -84,7 +84,7 @@ Now you can replace the JSON dump with something to display the results in a use
 
 ### Update getEvents
 
-1. Open **GraphTutorial/GraphManager.swift**. Change the `getEvents` function declaration to the following.
+1. Open **GraphManager.swift**. Change the `getEvents` function declaration to the following.
 
     ```Swift
     public func getEvents(completion: @escaping([MSGraphEvent]?, Error?) -> Void)
@@ -120,7 +120,7 @@ Now you can replace the JSON dump with something to display the results in a use
 ### Update CalendarViewController
 
 1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** project named `CalendarTableViewCell.swift`. Choose **UITableViewCell** in the **Subclass of** field.
-1. Open **GraphTutorial/CalendarTableViewCell.swift** and add the following code to the `CalendarTableViewCell` class.
+1. Open **CalendarTableViewCell.swift** and add the following code to the `CalendarTableViewCell` class.
 
     ```Swift
     @IBOutlet var subjectLabel: UILabel!
@@ -146,7 +146,7 @@ Now you can replace the JSON dump with something to display the results in a use
     }
     ```
 
-1. Open **GraphTutorial/Main.storyboard** and locate the **Calendar Scene**. Select the **View** in the **Calendar Scene** and delete it.
+1. Open **Main.storyboard** and locate the **Calendar Scene**. Select the **View** in the **Calendar Scene** and delete it.
 
     ![A screenshot of the View in the Calendar Scene](./images/view-in-calendar-scene.png)
 
@@ -159,7 +159,7 @@ Now you can replace the JSON dump with something to display the results in a use
 
     ![A screenshot of the prototype cell layout](./images/prototype-cell-layout.png)
 
-1. Open **GraphTutorial/CalendarViewController.swift** and replace its contents with the following code.
+1. Open **CalendarViewController.swift** and replace its contents with the following code.
 
     ```Swift
     import UIKit
