@@ -257,4 +257,4 @@ The calendar scene should look similar to this once you're done.
 
 Save your changes and launch the app. You should be able to move between the screens using the **Sign In** and **Sign Out** buttons and the tab bar.
 
-![Screenshots of the application on Android](./images/app-screens.png)
+![Screenshots of the application](./images/app-screens.png)
