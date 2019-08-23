@@ -1,0 +1,7 @@
+{
+  "sourceDirectory": ".\\demos\\03-add-msgraph",
+  "exampleConfigFile": ".\\GraphTutorial\\GraphTutorial\\AuthSettings.plist.example",
+  "configFile": "AuthSettings.plist",
+  "archiveFile": "SwiftQuickStart.zip",
+  "zipReadMe": ".\\README.md"
+}
