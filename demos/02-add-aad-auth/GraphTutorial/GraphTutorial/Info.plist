@@ -35,6 +35,7 @@
 			</array>
 		</dict>
 	</array>
+	<key>LSApplicationQueriesSchemes</key>
 	<array>
 			<string>msauthv2</string>
 			<string>msauthv3</string>
