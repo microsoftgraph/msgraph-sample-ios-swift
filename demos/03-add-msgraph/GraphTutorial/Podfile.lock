@@ -2,18 +2,18 @@ PODS:
   - MSAL (1.0.2):
     - MSAL/app-lib (= 1.0.2)
   - MSAL/app-lib (1.0.2)
-  - MSGraphClientModels (0.1.1)
-  - MSGraphClientSDK (0.1.3):
-    - MSGraphClientSDK/Authentication (= 0.1.3)
-    - MSGraphClientSDK/Common (= 0.1.3)
-  - MSGraphClientSDK/Authentication (0.1.3)
-  - MSGraphClientSDK/Common (0.1.3):
+  - MSGraphClientModels (1.3.0)
+  - MSGraphClientSDK (1.0.0):
+    - MSGraphClientSDK/Authentication (= 1.0.0)
+    - MSGraphClientSDK/Common (= 1.0.0)
+  - MSGraphClientSDK/Authentication (1.0.0)
+  - MSGraphClientSDK/Common (1.0.0):
     - MSGraphClientSDK/Authentication
 
 DEPENDENCIES:
   - MSAL (~> 1.0.2)
-  - MSGraphClientModels (~> 0.1.1)
-  - MSGraphClientSDK (~> 0.1.3)
+  - MSGraphClientModels (~> 1.3.0)
+  - MSGraphClientSDK (~> 1.0.0)
 
 SPEC REPOS:
   trunk:
@@ -23,9 +23,9 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   MSAL: e63c1483f2f291717b94891ee8b201f6f91d6d41
-  MSGraphClientModels: 12b3102f06dbc203912ca546535cec5d1cbff41e
-  MSGraphClientSDK: dad4c1a3d7a6f1150d3dfadf3956f947c324f9b0
+  MSGraphClientModels: ffef6d0a1cdaa774e1689e38da35301cb74fc72a
+  MSGraphClientSDK: ffc07a58a838e0702c7bf2a856367035d4a335d7
 
-PODFILE CHECKSUM: 79f4a1221714a91ad023cdea89f03b3e7d666ae1
+PODFILE CHECKSUM: cacc2583cb7051eedbb19930f810829ea5efb8bd
 
 COCOAPODS: 1.8.4

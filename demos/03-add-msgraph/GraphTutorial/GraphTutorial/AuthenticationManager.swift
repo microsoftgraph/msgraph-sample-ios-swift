@@ -13,7 +13,7 @@ import MSGraphClientSDK
 // Implement the MSAuthenticationProvider interface so
 // this class can be used as an auth provider for the Graph SDK
 class AuthenticationManager: NSObject, MSAuthenticationProvider {
-    
+
     // Implement singleton pattern
     static let instance = AuthenticationManager()
 
@@ -40,7 +40,7 @@ class AuthenticationManager: NSObject, MSAuthenticationProvider {
     }
     
     // Required function for the MSAuthenticationProvider interface
-    func getAccessToken(completion: ((String?, Error?) -> Void)!) {
+    func getAccessToken(for authProviderOptions: MSAuthenticationProviderOptions!, andCompletion completion: ((String?, Error?) -> Void)!) {
         getTokenSilently(completion: completion)
     }
 

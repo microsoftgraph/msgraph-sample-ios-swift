@@ -31,8 +31,8 @@ Before moving on, install some additional dependencies that you will use later.
 
     ```Ruby
     pod 'MSAL', '~> 1.0.2'
-    pod 'MSGraphClientSDK', ' ~> 0.1.3'
-    pod 'MSGraphClientModels', '~> 0.1.1'
+    pod 'MSGraphClientSDK', ' ~> 1.0.0'
+    pod 'MSGraphClientModels', '~> 1.3.0'
     ```
 
 1. Save the Podfile, then run the following command to install the dependencies.

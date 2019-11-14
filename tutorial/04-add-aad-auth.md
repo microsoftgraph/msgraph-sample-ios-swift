@@ -104,7 +104,7 @@ In this section you will configure the project for MSAL, create an authenticatio
         }
 
         // Required function for the MSAuthenticationProvider interface
-        func getAccessToken(completion: ((String?, Error?) -> Void)!) {
+        func getAccessToken(for authProviderOptions: MSAuthenticationProviderOptions!, andCompletion completion: ((String?, Error?) -> Void)!) {
             getTokenSilently(completion: completion)
         }
 
