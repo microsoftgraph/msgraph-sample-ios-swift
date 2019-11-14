@@ -110,7 +110,7 @@ In this section you will create the views for the app: a sign in page, a tab bar
 
 1. Select the **Item 1 Scene**, then select the **Connections Inspector**.
 1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **Sign In View Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
-1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedOut`.
+1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedOut`, and set **Presentation** to **Full Screen**.
 
 ### Create welcome page
 

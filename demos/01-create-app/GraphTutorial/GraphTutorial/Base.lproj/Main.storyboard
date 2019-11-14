@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,7 +32,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <segue destination="DI5-2s-vtS" kind="presentation" identifier="userSignedIn" id="fK9-ad-sDz"/>
+                        <segue destination="DI5-2s-vtS" kind="presentation" identifier="userSignedIn" modalPresentationStyle="fullScreen" id="fK9-ad-sDz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,7 +139,7 @@
                         <outlet property="userDisplayName" destination="RQN-re-hOP" id="iDr-NG-HgH"/>
                         <outlet property="userEmail" destination="iTA-vy-YQG" id="Fyq-fU-SC0"/>
                         <outlet property="userProfilePhoto" destination="j3o-GY-fdp" id="ksQ-7b-2MR"/>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="userSignedOut" id="U4u-ST-A40"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="userSignedOut" modalPresentationStyle="fullScreen" id="U4u-ST-A40"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lPg-Zq-uBr" userLabel="First Responder" sceneMemberID="firstResponder"/>
