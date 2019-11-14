@@ -106,7 +106,7 @@ In this section you will create the views for the app: a sign in page, a tab bar
 
     ![A screenshot of dragging a manual segue to the new Tab Bar Controller in Xcode](./images/add-segue.png)
 
-1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedIn`.
+1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedIn`, and set **Presentation** to **Full Screen**.
 
     ![A screenshot of the Identifier field in the Attributes Inspector in Xcode](./images/set-segue-identifier.png)
 
