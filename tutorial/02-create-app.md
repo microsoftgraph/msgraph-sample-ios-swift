@@ -16,7 +16,6 @@ Begin by creating a new Swift project.
 Before moving on, install some additional dependencies that you will use later.
 
 - [Microsoft Authentication Library (MSAL) for iOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) for authenticating to with Azure AD.
-- [MSAL Authentication Provider for Objective C](https://github.com/microsoftgraph/msgraph-sdk-objc-auth) to connect MSAL with the Microsoft Graph SDK.
 - [Microsoft Graph SDK for Objective C](https://github.com/microsoftgraph/msgraph-sdk-objc) for making calls to Microsoft Graph.
 - [Microsoft Graph Models SDK for Objective C](https://github.com/microsoftgraph/msgraph-sdk-objc-models) for strongly-typed objects representing Microsoft Graph resources like users or events.
 
@@ -31,8 +30,7 @@ Before moving on, install some additional dependencies that you will use later.
 1. Open the Podfile and add the following lines just after the `use_frameworks!` line.
 
     ```Ruby
-    pod 'MSAL', '~> 0.3.0'
-    pod 'MSGraphMSALAuthProvider', '~> 0.1.1'
+    pod 'MSAL', '~> 1.0.2'
     pod 'MSGraphClientSDK', ' ~> 0.1.3'
     pod 'MSGraphClientModels', '~> 0.1.1'
     ```
