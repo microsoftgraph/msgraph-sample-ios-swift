@@ -18,7 +18,7 @@ class GraphManager {
     private let client: MSHTTPClient?
 
     private init() {
-        client = MSClientFactory.createHTTPClient(with: AuthenticationManager.instance.getGraphAuthProvider())
+        client = MSClientFactory.createHTTPClient(with: AuthenticationManager.instance)
     }
 
     public func getMe(completion: @escaping(MSGraphUser?, Error?) -> Void) {

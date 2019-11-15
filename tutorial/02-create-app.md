@@ -16,7 +16,6 @@ Begin by creating a new Swift project.
 Before moving on, install some additional dependencies that you will use later.
 
 - [Microsoft Authentication Library (MSAL) for iOS](https://github.com/AzureAD/microsoft-authentication-library-for-objc) for authenticating to with Azure AD.
-- [MSAL Authentication Provider for Objective C](https://github.com/microsoftgraph/msgraph-sdk-objc-auth) to connect MSAL with the Microsoft Graph SDK.
 - [Microsoft Graph SDK for Objective C](https://github.com/microsoftgraph/msgraph-sdk-objc) for making calls to Microsoft Graph.
 - [Microsoft Graph Models SDK for Objective C](https://github.com/microsoftgraph/msgraph-sdk-objc-models) for strongly-typed objects representing Microsoft Graph resources like users or events.
 
@@ -31,10 +30,9 @@ Before moving on, install some additional dependencies that you will use later.
 1. Open the Podfile and add the following lines just after the `use_frameworks!` line.
 
     ```Ruby
-    pod 'MSAL', '~> 0.3.0'
-    pod 'MSGraphMSALAuthProvider', '~> 0.1.1'
-    pod 'MSGraphClientSDK', ' ~> 0.1.3'
-    pod 'MSGraphClientModels', '~> 0.1.1'
+    pod 'MSAL', '~> 1.0.2'
+    pod 'MSGraphClientSDK', ' ~> 1.0.0'
+    pod 'MSGraphClientModels', '~> 1.3.0'
     ```
 
 1. Save the Podfile, then run the following command to install the dependencies.
@@ -106,13 +104,13 @@ In this section you will create the views for the app: a sign in page, a tab bar
 
     ![A screenshot of dragging a manual segue to the new Tab Bar Controller in Xcode](./images/add-segue.png)
 
-1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedIn`.
+1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedIn`, and set **Presentation** to **Full Screen**.
 
     ![A screenshot of the Identifier field in the Attributes Inspector in Xcode](./images/set-segue-identifier.png)
 
 1. Select the **Item 1 Scene**, then select the **Connections Inspector**.
 1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **Sign In View Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
-1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedOut`.
+1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedOut`, and set **Presentation** to **Full Screen**.
 
 ### Create welcome page
 

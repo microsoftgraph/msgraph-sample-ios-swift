@@ -8,9 +8,11 @@
 
 import Foundation
 import MSAL
-import MSGraphMSALAuthProvider
+import MSGraphClientSDK
 
-class AuthenticationManager {
+// Implement the MSAuthenticationProvider interface so
+// this class can be used as an auth provider for the Graph SDK
+class AuthenticationManager: NSObject, MSAuthenticationProvider {
 
     // Implement singleton pattern
     static let instance = AuthenticationManager()
@@ -19,7 +21,7 @@ class AuthenticationManager {
     private let appId: String
     private let graphScopes: Array<String>
 
-    private init() {
+    private override init() {
         // Get app ID and scopes from AuthSettings.plist
         let bundle = Bundle.main
         let authConfigPath = bundle.path(forResource: "AuthSettings", ofType: "plist")!
@@ -30,23 +32,25 @@ class AuthenticationManager {
 
         do {
             // Create the MSAL client
-            try self.publicClient = MSALPublicClientApplication(clientId: self.appId,
-                                                                keychainGroup: bundle.bundleIdentifier)
+            try self.publicClient = MSALPublicClientApplication(clientId: self.appId)
         } catch {
             print("Error creating MSAL public client: \(error)")
             self.publicClient = nil
         }
     }
-
-    public func getGraphAuthProvider() -> MSALAuthenticationProvider? {
-        // Create an MSAL auth provider for use with the Graph client
-        return MSALAuthenticationProvider(publicClientApplication: self.publicClient,
-                                          andScopes: self.graphScopes)
+    
+    // Required function for the MSAuthenticationProvider interface
+    func getAccessToken(for authProviderOptions: MSAuthenticationProviderOptions!, andCompletion completion: ((String?, Error?) -> Void)!) {
+        getTokenSilently(completion: completion)
     }
 
-    public func getTokenInteractively(completion: @escaping(_ accessToken: String?, Error?) -> Void) {
+    public func getTokenInteractively(parentView: UIViewController, completion: @escaping(_ accessToken: String?, Error?) -> Void) {
+        let webParameters = MSALWebviewParameters(parentViewController: parentView)
+        let interactiveParameters = MSALInteractiveTokenParameters(scopes: self.graphScopes,
+                                                                   webviewParameters: webParameters)
+        
         // Call acquireToken to open a browser so the user can sign in
-        publicClient?.acquireToken(forScopes: self.graphScopes, completionBlock: {
+        publicClient?.acquireToken(with: interactiveParameters, completionBlock: {
             (result: MSALResult?, error: Error?) in
             guard let tokenResult = result, error == nil else {
                 print("Error getting token interactively: \(String(describing: error))")
@@ -71,7 +75,8 @@ class AuthenticationManager {
 
         if (userAccount != nil) {
             // Attempt to get token silently
-            publicClient?.acquireTokenSilent(forScopes: self.graphScopes, account: userAccount!, completionBlock: {
+            let silentParameters = MSALSilentTokenParameters(scopes: self.graphScopes, account: userAccount!)
+            publicClient?.acquireTokenSilent(with: silentParameters, completionBlock: {
                 (result: MSALResult?, error: Error?) in
                 guard let tokenResult = result, error == nil else {
                     print("Error getting token silently: \(String(describing: error))")
@@ -85,7 +90,7 @@ class AuthenticationManager {
         } else {
             print("No account in cache")
             completion(nil, NSError(domain: "AuthenticationManager",
-                                    code: MSALErrorCode.interactionRequired.rawValue, userInfo: nil))
+                                    code: MSALError.interactionRequired.rawValue, userInfo: nil))
         }
     }
 
