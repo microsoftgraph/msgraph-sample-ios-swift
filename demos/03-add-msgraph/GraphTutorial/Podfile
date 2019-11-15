@@ -6,10 +6,9 @@ target 'GraphTutorial' do
   use_frameworks!
 
   # Pods for GraphTutorial
-  pod 'MSAL', '~> 0.3.0'
-  pod 'MSGraphMSALAuthProvider', '~> 0.1.1'
-  pod 'MSGraphClientSDK', ' ~> 0.1.3'
-  pod 'MSGraphClientModels', '~> 0.1.1'
+  pod 'MSAL', '~> 1.0.2'
+  pod 'MSGraphClientSDK', ' ~> 1.0.0'
+  pod 'MSGraphClientModels', '~> 1.3.0'
 
   target 'GraphTutorialTests' do
     inherit! :search_paths

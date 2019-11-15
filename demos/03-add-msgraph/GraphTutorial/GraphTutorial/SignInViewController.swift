@@ -42,7 +42,7 @@ class SignInViewController: UIViewController {
         spinner.start(container: self)
 
         // Do an interactive sign in
-        AuthenticationManager.instance.getTokenInteractively {
+        AuthenticationManager.instance.getTokenInteractively(parentView: self) {
             (token: String?, error: Error?) in
 
             DispatchQueue.main.async {
