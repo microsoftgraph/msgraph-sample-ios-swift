@@ -19,6 +19,9 @@
 		96D43C402437B610006980BD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C3F2437B610006980BD /* WelcomeViewController.swift */; };
 		96D43C422437B7C2006980BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C412437B7C2006980BD /* CalendarViewController.swift */; };
 		96D43C442437B90C006980BD /* SpinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C432437B90C006980BD /* SpinnerViewController.swift */; };
+		96D43C462437DD26006980BD /* AuthSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D43C452437DD26006980BD /* AuthSettings.plist */; };
+		96D43C492437E06E006980BD /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C482437E06E006980BD /* AuthenticationManager.swift */; };
+		96D43C4B2437E31D006980BD /* GraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C4A2437E31D006980BD /* GraphManager.swift */; };
 		A49ED4511CD749C9E4991DCE /* Pods_GraphTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17004BBC9F96FC5C686C5B5A /* Pods_GraphTutorial.framework */; };
 		F17234E92C3328A51AD2C524 /* Pods_GraphTutorial_GraphTutorialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1D59EA0F135B37AD659692 /* Pods_GraphTutorial_GraphTutorialUITests.framework */; };
 /* End PBXBuildFile section */
@@ -61,6 +64,10 @@
 		96D43C3F2437B610006980BD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		96D43C412437B7C2006980BD /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		96D43C432437B90C006980BD /* SpinnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerViewController.swift; sourceTree = "<group>"; };
+		96D43C452437DD26006980BD /* AuthSettings.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = AuthSettings.plist; sourceTree = "<group>"; };
+		96D43C472437DF19006980BD /* GraphTutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphTutorial.entitlements; sourceTree = "<group>"; };
+		96D43C482437E06E006980BD /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		96D43C4A2437E31D006980BD /* GraphManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphManager.swift; sourceTree = "<group>"; };
 		98B5A2CF3E3C984D2B247F2B /* Pods-GraphTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphTutorial.release.xcconfig"; path = "Target Support Files/Pods-GraphTutorial/Pods-GraphTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		A4A91084D2B3953A222792E8 /* Pods-GraphTutorial-GraphTutorialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphTutorial-GraphTutorialUITests.release.xcconfig"; path = "Target Support Files/Pods-GraphTutorial-GraphTutorialUITests/Pods-GraphTutorial-GraphTutorialUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3C0A07132F1D8BEDF83D39B /* Pods-GraphTutorial-GraphTutorialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphTutorial-GraphTutorialUITests.debug.xcconfig"; path = "Target Support Files/Pods-GraphTutorial-GraphTutorialUITests/Pods-GraphTutorial-GraphTutorialUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +142,7 @@
 		96A2B6F32437A7BD00650E1E /* GraphTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				96D43C472437DF19006980BD /* GraphTutorial.entitlements */,
 				96A2B6F42437A7BD00650E1E /* AppDelegate.swift */,
 				96A2B6F62437A7BD00650E1E /* SceneDelegate.swift */,
 				96A2B6F82437A7BD00650E1E /* SignInViewController.swift */,
@@ -145,6 +153,9 @@
 				96D43C3F2437B610006980BD /* WelcomeViewController.swift */,
 				96D43C412437B7C2006980BD /* CalendarViewController.swift */,
 				96D43C432437B90C006980BD /* SpinnerViewController.swift */,
+				96D43C452437DD26006980BD /* AuthSettings.plist */,
+				96D43C482437E06E006980BD /* AuthenticationManager.swift */,
+				96D43C4A2437E31D006980BD /* GraphManager.swift */,
 			);
 			path = GraphTutorial;
 			sourceTree = "<group>";
@@ -289,6 +300,7 @@
 				96A2B7012437A7C300650E1E /* LaunchScreen.storyboard in Resources */,
 				96A2B6FE2437A7C300650E1E /* Assets.xcassets in Resources */,
 				96A2B6FC2437A7BD00650E1E /* Main.storyboard in Resources */,
+				96D43C462437DD26006980BD /* AuthSettings.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +430,8 @@
 			files = (
 				96D43C422437B7C2006980BD /* CalendarViewController.swift in Sources */,
 				96A2B6F92437A7BD00650E1E /* SignInViewController.swift in Sources */,
+				96D43C4B2437E31D006980BD /* GraphManager.swift in Sources */,
+				96D43C492437E06E006980BD /* AuthenticationManager.swift in Sources */,
 				96D43C402437B610006980BD /* WelcomeViewController.swift in Sources */,
 				96A2B6F52437A7BD00650E1E /* AppDelegate.swift in Sources */,
 				96D43C442437B90C006980BD /* SpinnerViewController.swift in Sources */,
@@ -595,6 +609,7 @@
 			baseConfigurationReference = E2A4447556E4325DA6079EC0 /* Pods-GraphTutorial.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GraphTutorial/GraphTutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 627WDN8ZS4;
 				INFOPLIST_FILE = GraphTutorial/Info.plist;
@@ -614,6 +629,7 @@
 			baseConfigurationReference = 98B5A2CF3E3C984D2B247F2B /* Pods-GraphTutorial.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GraphTutorial/GraphTutorial.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 627WDN8ZS4;
 				INFOPLIST_FILE = GraphTutorial/Info.plist;

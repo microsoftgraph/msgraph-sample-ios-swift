@@ -12,10 +12,14 @@ In this exercise you will create a new Azure AD native application using the Azu
 
     - Set **Name** to `iOS Swift Graph Tutorial`.
     - Set **Supported account types** to **Accounts in any organizational directory and personal Microsoft accounts**.
-    - Under **Redirect URI**, change the dropdown to **Public client (mobile & desktop)**, and set the value to `msauth.YOUR_BUNDLE_ID://auth`, replacing `YOUR_BUNDLE_ID` with the bundle ID for your app.
+    - Leave **Redirect URI** empty.
 
     ![A screenshot of the Register an application page](./images/aad-register-an-app.png)
 
 1. Select **Register**. On the **iOS Swift Graph Tutorial** page, copy the value of the **Application (client) ID** and save it, you will need it in the next step.
 
     ![A screenshot of the application ID of the new app registration](./images/aad-application-id.png)
+
+1. Select **Authentication** under **Manage**. Select **Add a platform**, then **iOS / macOS**.
+
+1. Enter your app's Bundle ID and select **Configure**, then select **Done**.
