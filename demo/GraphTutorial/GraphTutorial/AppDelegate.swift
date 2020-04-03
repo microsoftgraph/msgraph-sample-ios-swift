@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  GraphTutorial
 //
-//  Created by Jason Johnston on 4/3/20.
-//  Copyright © 2020 Jason Johnston. All rights reserved.
+//  Copyright (c) Microsoft. All rights reserved.
+//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
 //
 
 import UIKit
