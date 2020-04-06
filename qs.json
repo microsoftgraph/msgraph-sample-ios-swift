@@ -1,5 +1,5 @@
 {
-  "sourceDirectory": ".\\demos\\03-add-msgraph",
+  "sourceDirectory": ".\\demo",
   "exampleConfigFile": ".\\GraphTutorial\\GraphTutorial\\AuthSettings.plist.example",
   "configFile": "AuthSettings.plist",
   "archiveFile": "SwiftQuickStart.zip",
