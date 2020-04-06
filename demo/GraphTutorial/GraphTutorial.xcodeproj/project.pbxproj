@@ -22,6 +22,7 @@
 		96D43C462437DD26006980BD /* AuthSettings.plist in Resources */ = {isa = PBXBuildFile; fileRef = 96D43C452437DD26006980BD /* AuthSettings.plist */; };
 		96D43C492437E06E006980BD /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C482437E06E006980BD /* AuthenticationManager.swift */; };
 		96D43C4B2437E31D006980BD /* GraphManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C4A2437E31D006980BD /* GraphManager.swift */; };
+		96D43C4D243B6704006980BD /* CalendarTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96D43C4C243B6704006980BD /* CalendarTableViewCell.swift */; };
 		A49ED4511CD749C9E4991DCE /* Pods_GraphTutorial.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17004BBC9F96FC5C686C5B5A /* Pods_GraphTutorial.framework */; };
 		F17234E92C3328A51AD2C524 /* Pods_GraphTutorial_GraphTutorialUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1D59EA0F135B37AD659692 /* Pods_GraphTutorial_GraphTutorialUITests.framework */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		96D43C472437DF19006980BD /* GraphTutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GraphTutorial.entitlements; sourceTree = "<group>"; };
 		96D43C482437E06E006980BD /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 		96D43C4A2437E31D006980BD /* GraphManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphManager.swift; sourceTree = "<group>"; };
+		96D43C4C243B6704006980BD /* CalendarTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarTableViewCell.swift; sourceTree = "<group>"; };
 		98B5A2CF3E3C984D2B247F2B /* Pods-GraphTutorial.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphTutorial.release.xcconfig"; path = "Target Support Files/Pods-GraphTutorial/Pods-GraphTutorial.release.xcconfig"; sourceTree = "<group>"; };
 		A4A91084D2B3953A222792E8 /* Pods-GraphTutorial-GraphTutorialUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphTutorial-GraphTutorialUITests.release.xcconfig"; path = "Target Support Files/Pods-GraphTutorial-GraphTutorialUITests/Pods-GraphTutorial-GraphTutorialUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B3C0A07132F1D8BEDF83D39B /* Pods-GraphTutorial-GraphTutorialUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GraphTutorial-GraphTutorialUITests.debug.xcconfig"; path = "Target Support Files/Pods-GraphTutorial-GraphTutorialUITests/Pods-GraphTutorial-GraphTutorialUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -142,20 +144,21 @@
 		96A2B6F32437A7BD00650E1E /* GraphTutorial */ = {
 			isa = PBXGroup;
 			children = (
-				96D43C472437DF19006980BD /* GraphTutorial.entitlements */,
 				96A2B6F42437A7BD00650E1E /* AppDelegate.swift */,
+				96A2B6FD2437A7C300650E1E /* Assets.xcassets */,
+				96D43C482437E06E006980BD /* AuthenticationManager.swift */,
+				96D43C452437DD26006980BD /* AuthSettings.plist */,
+				96D43C4C243B6704006980BD /* CalendarTableViewCell.swift */,
+				96D43C412437B7C2006980BD /* CalendarViewController.swift */,
+				96D43C4A2437E31D006980BD /* GraphManager.swift */,
+				96D43C472437DF19006980BD /* GraphTutorial.entitlements */,
+				96A2B7022437A7C300650E1E /* Info.plist */,
+				96A2B6FF2437A7C300650E1E /* LaunchScreen.storyboard */,
+				96A2B6FA2437A7BD00650E1E /* Main.storyboard */,
 				96A2B6F62437A7BD00650E1E /* SceneDelegate.swift */,
 				96A2B6F82437A7BD00650E1E /* SignInViewController.swift */,
-				96A2B6FA2437A7BD00650E1E /* Main.storyboard */,
-				96A2B6FD2437A7C300650E1E /* Assets.xcassets */,
-				96A2B6FF2437A7C300650E1E /* LaunchScreen.storyboard */,
-				96A2B7022437A7C300650E1E /* Info.plist */,
-				96D43C3F2437B610006980BD /* WelcomeViewController.swift */,
-				96D43C412437B7C2006980BD /* CalendarViewController.swift */,
 				96D43C432437B90C006980BD /* SpinnerViewController.swift */,
-				96D43C452437DD26006980BD /* AuthSettings.plist */,
-				96D43C482437E06E006980BD /* AuthenticationManager.swift */,
-				96D43C4A2437E31D006980BD /* GraphManager.swift */,
+				96D43C3F2437B610006980BD /* WelcomeViewController.swift */,
 			);
 			path = GraphTutorial;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				96A2B6F52437A7BD00650E1E /* AppDelegate.swift in Sources */,
 				96D43C442437B90C006980BD /* SpinnerViewController.swift in Sources */,
 				96A2B6F72437A7BD00650E1E /* SceneDelegate.swift in Sources */,
+				96D43C4D243B6704006980BD /* CalendarTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -82,69 +82,15 @@ You can now run the app, sign in, and tap the **Calendar** navigation item in th
 
 Now you can replace the JSON dump with something to display the results in a user-friendly manner. In this section, you will modify the `getEvents` function to return strongly-typed objects, and modify `CalendarViewController` to use a table view to render the events.
 
-### Update getEvents
+1. Open **GraphManager.swift**. Replace the existing `getEvents` function with the following.
 
-1. Open **GraphManager.swift**. Change the `getEvents` function declaration to the following.
-
-    ```Swift
-    public func getEvents(completion: @escaping([MSGraphEvent]?, Error?) -> Void)
-    ```
-
-1. Replace the `completion(eventsData, nil)` line with the following code.
-
-    ```Swift
-    do {
-        // Deserialize response as events collection
-        let eventsCollection = try MSCollection(data: eventsData)
-        var eventArray: [MSGraphEvent] = []
-
-        eventsCollection.value.forEach({
-            (rawEvent: Any) in
-            // Convert JSON to a dictionary
-            guard let eventDict = rawEvent as? [String: Any] else {
-                return
-            }
-
-            // Deserialize event from the dictionary
-            let event = MSGraphEvent(dictionary: eventDict)!
-            eventArray.append(event)
-        })
-
-        // Return the array
-        completion(eventArray, nil)
-    } catch {
-        completion(nil, error)
-    }
-    ```
-
-### Update CalendarViewController
+    :::code language="swift" source="../demo/GraphTutorial/GraphTutorial/GraphManager.swift" id="GetEventsSnippet" highlight="1,17-38":::
 
 1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** project named `CalendarTableViewCell.swift`. Choose **UITableViewCell** in the **Subclass of** field.
+
 1. Open **CalendarTableViewCell.swift** and add the following code to the `CalendarTableViewCell` class.
 
-    ```Swift
-    @IBOutlet var subjectLabel: UILabel!
-    @IBOutlet var organizerLabel: UILabel!
-    @IBOutlet var durationLabel: UILabel!
-
-    var subject: String? {
-        didSet {
-            subjectLabel.text = subject
-        }
-    }
-
-    var organizer: String? {
-        didSet {
-            organizerLabel.text = organizer
-        }
-    }
-
-    var duration: String? {
-        didSet {
-            durationLabel.text = duration
-        }
-    }
-    ```
+    :::code language="swift" source="../demo/GraphTutorial/GraphTutorial/CalendarTableViewCell.swift" id="PropertiesSnippet":::
 
 1. Open **Main.storyboard** and locate the **Calendar Scene**. Select the **View** in the **Calendar Scene** and delete it.
 
@@ -156,99 +102,30 @@ Now you can replace the JSON dump with something to display the results in a use
 1. Select the prototype cell, then select the **Identity Inspector**. Change **Class** to **CalendarTableViewCell**.
 1. Select the **Attributes Inspector** and set **Identifier** to `EventCell`.
 1. With the **EventCell** selected, select the **Connections Inspector** and connect `durationLabel`, `organizerLabel`, and `subjectLabel` to the labels you added to the cell on the storyboard.
+1. Set the properties and constraints on the three labels as follows.
+
+    - **Subject Label**
+        - Add constraint: Leading space to Content View Leading Margin, value: 0
+        - Add constraint: Trailing space to Content View Trailing Margin, value: 0
+        - Add constraint: Top space to Content View Top Margin, value: 0
+    - **Organizer Label**
+        - Font: System 12.0
+        - Add constraint: Leading space to Content View Leading Margin, value: 0
+        - Add constraint: Trailing space to Content View Trailing Margin, value: 0
+        - Add constraint: Top space to Subject Label Bottom, value: Standard
+    - **Duration Label**
+        - Font: System 12.0
+        - Color: Dark Gray Color
+        - Add constraint: Leading space to Content View Leading Margin, value: 0
+        - Add constraint: Trailing space to Content View Trailing Margin, value: 0
+        - Add constraint: Top space to Organizer Label Bottom, value: Standard
+        - Add constraint: Bottom space to Content View Bottom Margin, value: 8
 
     ![A screenshot of the prototype cell layout](./images/prototype-cell-layout.png)
 
 1. Open **CalendarViewController.swift** and replace its contents with the following code.
 
-    ```Swift
-    import UIKit
-    import MSGraphClientModels
-
-    class CalendarViewController: UITableViewController {
-
-        private let tableCellIdentifier = "EventCell"
-        private let spinner = SpinnerViewController()
-        private var events: [MSGraphEvent]?
-
-        override func viewDidLoad() {
-            super.viewDidLoad()
-
-            // Do any additional setup after loading the view.
-            self.spinner.start(container: self)
-
-            GraphManager.instance.getEvents {
-                (eventArray: [MSGraphEvent]?, error: Error?) in
-                DispatchQueue.main.async {
-                    self.spinner.stop()
-
-                    guard let events = eventArray, error == nil else {
-                        // Show the error
-                        let alert = UIAlertController(title: "Error getting events",
-                                                      message: error.debugDescription,
-                                                      preferredStyle: .alert)
-
-                        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                        self.present(alert, animated: true)
-                        return
-                    }
-
-                    self.events = events
-                    self.tableView.reloadData()
-                }
-            }
-        }
-
-        // Number of sections, always 1
-        override func numberOfSections(in tableView: UITableView) -> Int {
-            return 1
-        }
-
-        // Return the number of events in the table
-        override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return events?.count ?? 0
-        }
-
-        override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: tableCellIdentifier, for: indexPath) as! CalendarTableViewCell
-
-            // Get the event that corresponds to the row
-            let event = events?[indexPath.row]
-
-            // Configure the cell
-            cell.subject = event?.subject
-            cell.organizer = event?.organizer?.emailAddress?.name
-
-            // Build a duration string
-            let duration = "\(self.formatGraphDateTime(dateTime: event?.start)) to \(self.formatGraphDateTime(dateTime: event?.end))"
-            cell.duration = duration
-
-            return cell
-        }
-
-        private func formatGraphDateTime(dateTime: MSGraphDateTimeTimeZone?) -> String {
-            guard let graphDateTime = dateTime else {
-                return ""
-            }
-
-            // Create a formatter to parse Graph's date format
-            let isoFormatter = DateFormatter()
-            isoFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSSSSS"
-
-            // Specify the timezone
-            isoFormatter.timeZone = TimeZone(identifier: graphDateTime.timeZone!)
-
-            let date = isoFormatter.date(from: graphDateTime.dateTime)
-
-            // Output like 5/5/2019, 2:00 PM
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .short
-            dateFormatter.timeStyle = .short
-
-            return dateFormatter.string(from: date!)
-        }
-    }
-    ```
+    :::code language="swift" source="../demo/GraphTutorial/GraphTutorial/CalendarViewController.swift" id="CalendarViewSnippet":::
 
 1. Run the app, sign in, and tap the **Calendar** tab. You should see the list of events.
 

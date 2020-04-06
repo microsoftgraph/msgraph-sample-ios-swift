@@ -43,4 +43,48 @@ class GraphManager {
         // Execute the request
         meDataTask?.execute()
     }
+    
+    // <GetEventsSnippet>
+    public func getEvents(completion: @escaping([MSGraphEvent]?, Error?) -> Void) {
+        // GET /me/events?$select='subject,organizer,start,end'$orderby=createdDateTime DESC
+        // Only return these fields in results
+        let select = "$select=subject,organizer,start,end"
+        // Sort results by when they were created, newest first
+        let orderBy = "$orderby=createdDateTime+DESC"
+        let eventsRequest = NSMutableURLRequest(url: URL(string: "\(MSGraphBaseURL)/me/events?\(select)&\(orderBy)")!)
+        let eventsDataTask = MSURLSessionDataTask(request: eventsRequest, client: self.client, completion: {
+            (data: Data?, response: URLResponse?, graphError: Error?) in
+            guard let eventsData = data, graphError == nil else {
+                completion(nil, graphError)
+                return
+            }
+
+            do {
+                // Deserialize response as events collection
+                let eventsCollection = try MSCollection(data: eventsData)
+                var eventArray: [MSGraphEvent] = []
+
+                eventsCollection.value.forEach({
+                    (rawEvent: Any) in
+                    // Convert JSON to a dictionary
+                    guard let eventDict = rawEvent as? [String: Any] else {
+                        return
+                    }
+
+                    // Deserialize event from the dictionary
+                    let event = MSGraphEvent(dictionary: eventDict)!
+                    eventArray.append(event)
+                })
+
+                // Return the array
+                completion(eventArray, nil)
+            } catch {
+                completion(nil, error)
+            }
+        })
+
+        // Execute the request
+        eventsDataTask?.execute()
+    }
+    // </GetEventsSnippet>
 }
