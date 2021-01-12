@@ -3,9 +3,9 @@
 Begin by creating a new Swift project.
 
 1. Open Xcode. On the **File** menu, select **New**, then **Project**.
-1. Choose the **Single View App** template and select **Next**.
+1. Choose the **App** template and select **Next**.
 
-    ![A screenshot of the Xcode template selection dialog](./images/xcode-select-template.png)
+    ![A screenshot of the Xcode template selection dialog](images/xcode-select-template.png)
 
 1. Set the **Product Name** to `GraphTutorial` and the **Language** to **Swift**.
 1. Fill in the remaining fields and select **Next**.
@@ -30,7 +30,7 @@ Before moving on, install some additional dependencies that you will use later.
 1. Open the Podfile and add the following lines just after the `use_frameworks!` line.
 
     ```Ruby
-    pod 'MSAL', '~> 1.1.1'
+    pod 'MSAL', '~> 1.1.13'
     pod 'MSGraphClientSDK', ' ~> 1.0.0'
     pod 'MSGraphClientModels', '~> 1.3.0'
     ```
@@ -52,7 +52,7 @@ In this section you will create the views for the app: a sign in page, a tab bar
 1. Expand the **GraphTutorial** folder in Xcode, then select **ViewController.swift**.
 1. In the **File Inspector**, change the **Name** of the file to `SignInViewController.swift`.
 
-    ![A screenshot of the File Inspector](./images/rename-file.png)
+    ![A screenshot of the File Inspector](images/rename-file.png)
 
 1. Open **SignInViewController.swift** and replace its contents with the following code.
 
@@ -72,31 +72,30 @@ In this section you will create the views for the app: a sign in page, a tab bar
     }
     ```
 
-1. Open the **Main.storyboard** file.
-1. Expand **View Controller Scene**, then select **View Controller**.
+1. Open **Main.storyboard**. Expand **View Controller Scene**, then select **View Controller**.
 
-    ![A screenshot of Xcode with the View Controller selected](./images/storyboard-select-view-controller.png)
+    ![A screenshot of Xcode with the View Controller selected](images/storyboard-select-view-controller.png)
 
 1. Select the **Identity Inspector**, then change the **Class** dropdown to **SignInViewController**.
 
-    ![A screenshot of the Identity Inspector](./images/change-class.png)
+    ![A screenshot of the Identity Inspector](images/change-class.png)
 
 1. Select the **Library**, then drag a **Button** onto the **Sign In View Controller**.
 
-    ![A screenshot of the Library in Xcode](./images/add-button-to-view.png)
+    ![A screenshot of the Library in Xcode](images/add-button-to-view.png)
 
 1. With the button selected, select the **Attributes Inspector** and change the **Title** of the button to `Sign In`.
 
-    ![A screenshot of the Title field in the Attributes Inspector in Xcode](./images/set-button-title.png)
+    ![A screenshot of the Title field in the Attributes Inspector in Xcode](images/set-button-title.png)
 
 1. With the button selected, select the **Align** button at the bottom of the storyboard. Select both the **Horizontally in container** and **Vertically in container** constraints, leave their values as 0, then select **Add 2 constraints**.
 
-    ![A screenshot of the alignment constraints settings in Xcode](./images/add-alignment-constraints.png)
+    ![A screenshot of the alignment constraints settings in Xcode](images/add-alignment-constraints.png)
 
 1. Select the **Sign In View Controller**, then select the **Connections Inspector**.
 1. Under **Received Actions**, drag the unfilled circle next to **signIn** onto the button. Select **Touch Up Inside** on the pop-up menu.
 
-    ![A screenshot of dragging the signIn action to the button in Xcode](./images/connect-sign-in-button.png)
+    ![A screenshot of dragging the signIn action to the button in Xcode](images/connect-sign-in-button.png)
 
 ### Create tab bar
 
@@ -104,11 +103,11 @@ In this section you will create the views for the app: a sign in page, a tab bar
 1. Select the **Sign In View Controller**, then select the **Connections Inspector**.
 1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **Tab Bar Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
 
-    ![A screenshot of dragging a manual segue to the new Tab Bar Controller in Xcode](./images/add-segue.png)
+    ![A screenshot of dragging a manual segue to the new Tab Bar Controller in Xcode](images/add-segue.png)
 
 1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `userSignedIn`, and set **Presentation** to **Full Screen**.
 
-    ![A screenshot of the Identifier field in the Attributes Inspector in Xcode](./images/set-segue-identifier.png)
+    ![A screenshot of the Identifier field in the Attributes Inspector in Xcode](images/set-segue-identifier.png)
 
 1. Select the **Item 1 Scene**, then select the **Connections Inspector**.
 1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **Sign In View Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
@@ -117,11 +116,11 @@ In this section you will create the views for the app: a sign in page, a tab bar
 ### Create welcome page
 
 1. Select the **Assets.xcassets** file.
-1. On the **Editor** menu, select **Add Assets**, then **New Image Set**.
+1. On the **Editor** menu, select **Add New Asset**, then **Image Set**.
 1. Select the new **Image** asset and use the **Attribute Inspector** to set its **Name** to `DefaultUserPhoto`.
 1. Add any image you like to serve as a default user profile photo.
 
-    ![A screenshot of the Image Set asset view in Xcode](./images/add-default-user-photo.png)
+    ![A screenshot of the Image Set asset view in Xcode](images/add-default-user-photo.png)
 
 1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** folder named `WelcomeViewController`. Choose **UIViewController** in the **Subclass of** field.
 1. Open **WelcomeViewController.swift** and replace its contents with the following code.
@@ -202,7 +201,7 @@ In this section you will create the views for the app: a sign in page, a tab bar
 
 The welcome scene should look similar to this once you're done.
 
-![A screenshot of the Welcome scene layout](./images/welcome-scene-layout.png)
+![A screenshot of the Welcome scene layout](images/welcome-scene-layout.png)
 
 ### Create calendar page
 
@@ -225,19 +224,53 @@ The welcome scene should look similar to this once you're done.
             calendarJSON.text = "Calendar"
             calendarJSON.sizeToFit()
         }
+
+        @IBAction func showNewEventForm() {
+            self.performSegue(withIdentifier: "showEventForm", sender: self)
+        }
     }
     ```
 
 1. Open **Main.storyboard**. Select the **Item 2 Scene**, then select the **Identity Inspector**. Change the **Class** value to **CalendarViewController**.
+1. Using the **Library**, add a **Navigation Bar** to the **Item 2 Scene**.
+1. Double-click the **Title** in the navigation bar and update it to `Calendar`.
+1. Using the **Library**, add a **Bar Button Item** to the right-hand side of the navigation bar.
+1. Select the new bar button, then select the **Attributes Inspector**. Change **Image** to **plus**.
 1. Using the **Library**, add a **Text View** to the **Item 2 Scene**.
 1. Select the text view you just added. On the **Editor** menu, choose **Embed In**, then **Scroll View**.
+1. Resize the scroll view and text view to take up the screen under the navigation bar.
 1. Using the **Connections Inspector**, connect the **calendarJSON** outlet to the text view.
+1. Connect the **showNewEventForm** received action to the navigation bar button.
 1. Select the tab bar item at the bottom of the scene, then select the **Attributes Inspector**. Change the **Title** to `Calendar`.
-1. On the **Editor** menu, select **Resolve Auto Layout Issues**, then select **Add Missing Constraints** underneath **All Views in Welcome View Controller**.
+1. On the **Editor** menu, select **Resolve Auto Layout Issues**, then select **Add Missing Constraints** underneath **All Views in Calendar View Controller**.
 
 The calendar scene should look similar to this once you're done.
 
-![A screenshot of the Calendar scene layout](./images/calendar-scene-layout.png)
+![A screenshot of the Calendar scene layout](images/calendar-scene-layout.png)
+
+### Create new event page
+
+1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** folder named `NewEventViewController`. Choose **UIViewController** in the **Subclass of** field.
+1. Open **NewEventViewController.swift** and add the following function to the **NewEventViewController** class.
+
+    ```swift
+    @IBAction func cancel() {
+        self.dismiss(animated: true, completion: nil)
+    }
+    ```
+
+1. Open **Main.storyboard**. Use the **Library** to drag a **View Controller** onto the storyboard.
+1. Using the **Library**, add a **Navigation Bar** to the view controller.
+1. Double-click the **Title** in the navigation bar and update it to `New Event`.
+1. Using the **Library**, add a **Bar Button Item** to the left-hand side of the navigation bar.
+1. Select the new bar button, then select the **Attributes Inspector**. Change **Title** to `Cancel`.
+1. Using the **Library**, add a **Bar Button Item** to the right-hand side of the navigation bar.
+1. Select the new bar button, then select the **Attributes Inspector**. Change **Title** to `Create`.
+1. Select the view controller, then select the **Identity Inspector**. Change **Class** to **NewEventViewController**.
+1. Use the **Connection Inspector** to connect the **cancel** received action to the **Cancel** bar button.
+1. Select the **Calendar Scene**, then select the **Connections Inspector**.
+1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **New Event View Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
+1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `showEventForm`.
 
 ### Create activity indicator
 
@@ -250,4 +283,4 @@ The calendar scene should look similar to this once you're done.
 
 Save your changes and launch the app. You should be able to move between the screens using the **Sign In** and **Sign Out** buttons and the tab bar.
 
-![Screenshots of the application](./images/app-screens.png)
+![Screenshots of the application](images/app-screens.png)
