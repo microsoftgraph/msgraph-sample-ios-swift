@@ -96,8 +96,11 @@ In this section you will create a helper class to hold all of the calls to Micro
 
         private let client: MSHTTPClient?
 
+        public var userTimeZone: String
+
         private init() {
             client = MSClientFactory.createHTTPClient(with: AuthenticationManager.instance)
+            userTimeZone = "UTC"
         }
 
         public func getMe(completion: @escaping(MSGraphUser?, Error?) -> Void) {
@@ -132,11 +135,10 @@ In this section you will create a helper class to hold all of the calls to Micro
     import MSGraphClientModels
     ```
 
-1. Add the following properties to the `WelcomeViewController` class.
+1. Add the following property to the `WelcomeViewController` class.
 
     ```Swift
     private let spinner = SpinnerViewController()
-    private var userTimeZone: String = "UTC";
     ```
 
 1. Replace the existing `viewDidLoad` with the following code.

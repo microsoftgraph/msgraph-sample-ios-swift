@@ -224,53 +224,20 @@ The welcome scene should look similar to this once you're done.
             calendarJSON.text = "Calendar"
             calendarJSON.sizeToFit()
         }
-
-        @IBAction func showNewEventForm() {
-            self.performSegue(withIdentifier: "showEventForm", sender: self)
-        }
     }
     ```
 
 1. Open **Main.storyboard**. Select the **Item 2 Scene**, then select the **Identity Inspector**. Change the **Class** value to **CalendarViewController**.
-1. Using the **Library**, add a **Navigation Bar** to the **Item 2 Scene**.
-1. Double-click the **Title** in the navigation bar and update it to `Calendar`.
-1. Using the **Library**, add a **Bar Button Item** to the right-hand side of the navigation bar.
-1. Select the new bar button, then select the **Attributes Inspector**. Change **Image** to **plus**.
 1. Using the **Library**, add a **Text View** to the **Item 2 Scene**.
 1. Select the text view you just added. On the **Editor** menu, choose **Embed In**, then **Scroll View**.
-1. Resize the scroll view and text view to take up the screen under the navigation bar.
+1. Resize the scroll view and text view to take up the entire screen.
 1. Using the **Connections Inspector**, connect the **calendarJSON** outlet to the text view.
-1. Connect the **showNewEventForm** received action to the navigation bar button.
 1. Select the tab bar item at the bottom of the scene, then select the **Attributes Inspector**. Change the **Title** to `Calendar`.
 1. On the **Editor** menu, select **Resolve Auto Layout Issues**, then select **Add Missing Constraints** underneath **All Views in Calendar View Controller**.
 
 The calendar scene should look similar to this once you're done.
 
 ![A screenshot of the Calendar scene layout](images/calendar-scene-layout.png)
-
-### Create new event page
-
-1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** folder named `NewEventViewController`. Choose **UIViewController** in the **Subclass of** field.
-1. Open **NewEventViewController.swift** and add the following function to the **NewEventViewController** class.
-
-    ```swift
-    @IBAction func cancel() {
-        self.dismiss(animated: true, completion: nil)
-    }
-    ```
-
-1. Open **Main.storyboard**. Use the **Library** to drag a **View Controller** onto the storyboard.
-1. Using the **Library**, add a **Navigation Bar** to the view controller.
-1. Double-click the **Title** in the navigation bar and update it to `New Event`.
-1. Using the **Library**, add a **Bar Button Item** to the left-hand side of the navigation bar.
-1. Select the new bar button, then select the **Attributes Inspector**. Change **Title** to `Cancel`.
-1. Using the **Library**, add a **Bar Button Item** to the right-hand side of the navigation bar.
-1. Select the new bar button, then select the **Attributes Inspector**. Change **Title** to `Create`.
-1. Select the view controller, then select the **Identity Inspector**. Change **Class** to **NewEventViewController**.
-1. Use the **Connection Inspector** to connect the **cancel** received action to the **Cancel** bar button.
-1. Select the **Calendar Scene**, then select the **Connections Inspector**.
-1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **New Event View Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
-1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `showEventForm`.
 
 ### Create activity indicator
 
