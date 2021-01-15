@@ -121,7 +121,7 @@ Now you can replace the JSON dump with something to display the results in a use
 
 1. Open **GraphManager.swift**. Replace the existing `getCalendarView` function with the following.
 
-    :::code language="swift" source="../demo/GraphTutorial/GraphTutorial/GraphManager.swift" id="GetEventsSnippet" highlight="1,26-47":::
+    :::code language="swift" source="../demo/GraphTutorial/GraphTutorial/GraphManager.swift" id="GetEventsSnippet" highlight="3,28-49":::
 
 1. Create a new **Cocoa Touch Class** file in the **GraphTutorial** project named `CalendarTableViewController.swift`. Choose **UITableViewController** in the **Subclass of** field.
 
