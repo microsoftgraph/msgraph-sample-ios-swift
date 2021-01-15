@@ -88,6 +88,8 @@ In this section you will add the ability to create events on the user's calendar
         - Top space to End Date Picker, value: Standard
         - Bottom space to View margin, value: 0
 
+    ![A screenshot of the new event form on the storyboard](images/new-event-form.png)
+
 1. Select the **Calendar Scene**, then select the **Connections Inspector**.
 1. Under **Triggered Segues**, drag the unfilled circle next to **manual** onto the **New Event View Controller** on the storyboard. Select **Present Modally** in the pop-up menu.
 1. Select the segue you just added, then select the **Attributes Inspector**. Set the **Identifier** field to `showEventForm`.
