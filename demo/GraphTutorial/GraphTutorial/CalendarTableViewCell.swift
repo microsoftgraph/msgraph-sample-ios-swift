@@ -3,13 +3,12 @@
 //  GraphTutorial
 //
 //  Copyright (c) Microsoft. All rights reserved.
-//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+//  Licensed under the MIT license.
 //
 
 import UIKit
 
 class CalendarTableViewCell: UITableViewCell {
-    
     // <PropertiesSnippet>
     @IBOutlet var subjectLabel: UILabel!
     @IBOutlet var organizerLabel: UILabel!

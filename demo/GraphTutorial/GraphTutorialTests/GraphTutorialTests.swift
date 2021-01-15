@@ -2,8 +2,7 @@
 //  GraphTutorialTests.swift
 //  GraphTutorialTests
 //
-//  Created by Jason Johnston on 4/3/20.
-//  Copyright © 2020 Jason Johnston. All rights reserved.
+//  Created by Jason Johnston on 1/12/21.
 //
 
 import XCTest

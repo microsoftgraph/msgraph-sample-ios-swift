@@ -8,9 +8,9 @@ In this exercise you will extend the application from the previous exercise to s
     | Key | Type | Value |
     |-----|------|-------|
     | `AppId` | String | The application ID from the Azure portal |
-    | `GraphScopes` | Array | Two String values: `User.Read` and `Calendars.Read` |
+    | `GraphScopes` | Array | Three String values: `User.Read`, `MailboxSettings.Read`, and `Calendars.ReadWrite` |
 
-    ![A screenshot of the AuthSettings.plist file in Xcode](./images/auth-settings.png)
+    ![A screenshot of the AuthSettings.plist file in Xcode](images/auth-settings.png)
 
 > [!IMPORTANT]
 > If you're using source control such as git, now would be a good time to exclude the **AuthSettings.plist** file from source control to avoid inadvertently leaking your app ID.
@@ -76,7 +76,7 @@ In this section you will configure the project for MSAL, create an authenticatio
 
 If you sign in to the app, you should see an access token displayed in the output window in Xcode.
 
-![A screenshot of the output window in Xcode showing an access token](./images/access-token-output.png)
+![A screenshot of the output window in Xcode showing an access token](images/access-token-output.png)
 
 ## Get user details
 
@@ -96,13 +96,17 @@ In this section you will create a helper class to hold all of the calls to Micro
 
         private let client: MSHTTPClient?
 
+        public var userTimeZone: String
+
         private init() {
             client = MSClientFactory.createHTTPClient(with: AuthenticationManager.instance)
+            userTimeZone = "UTC"
         }
 
         public func getMe(completion: @escaping(MSGraphUser?, Error?) -> Void) {
             // GET /me
-            let meRequest = NSMutableURLRequest(url: URL(string: "\(MSGraphBaseURL)/me")!)
+            let select = "$select=displayName,mail,mailboxSettings,userPrincipalName"
+            let meRequest = NSMutableURLRequest(url: URL(string: "\(MSGraphBaseURL)/me?\(select)")!)
             let meDataTask = MSURLSessionDataTask(request: meRequest, client: self.client, completion: {
                 (data: Data?, response: URLResponse?, graphError: Error?) in
                 guard let meData = data, graphError == nil else {

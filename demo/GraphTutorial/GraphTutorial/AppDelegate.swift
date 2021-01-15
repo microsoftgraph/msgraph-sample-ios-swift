@@ -3,13 +3,13 @@
 //  GraphTutorial
 //
 //  Copyright (c) Microsoft. All rights reserved.
-//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+//  Licensed under the MIT license.
 //
 
 import UIKit
 import MSAL
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
@@ -43,6 +43,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return MSALPublicClientApplication.handleMSALResponse(url, sourceApplication: sourceApplication)
     }
     // </HandleMsalResponseSnippet>
-
 }
 

@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD002 MD041 -->
 
-This tutorial teaches you how to build an React Native app that uses the Microsoft Graph API to retrieve calendar information for a user.
+This tutorial teaches you how to build an iOS app with Swift that uses the Microsoft Graph API to retrieve calendar information for a user.
 
 > [!TIP]
 > If you prefer to just download the completed tutorial, you can download or clone the [GitHub repository](https://github.com/microsoftgraph/msgraph-training-ios-swift).
@@ -18,7 +18,7 @@ You should also have either a personal Microsoft account with a mailbox on Outlo
 - You can [sign up for the Office 365 Developer Program](https://developer.microsoft.com/office/dev-program) to get a free Office 365 subscription.
 
 > [!NOTE]
-> This tutorial was written using Xcode version 11.4 and CocoaPods version 1.9.1 The steps in this guide may work with other versions, but that has not been tested.
+> This tutorial was written using Xcode version 12.3 and CocoaPods version 1.10.1 The steps in this guide may work with other versions, but that has not been tested.
 
 ## Feedback
 
