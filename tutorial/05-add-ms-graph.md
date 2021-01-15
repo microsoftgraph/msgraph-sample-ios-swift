@@ -9,7 +9,9 @@ In this section you will extend the `GraphManager` class to add a function to ge
 1. Open **GraphManager.swift** and add the following method to the `GraphManager` class.
 
     ```Swift
-    public func getCalendarView(viewStart: String, viewEnd: String, completion: @escaping(Data?, Error?) -> Void) {
+    public func getCalendarView(viewStart: String,
+                                viewEnd: String,
+                                completion: @escaping(Data?, Error?) -> Void) {
         // GET /me/calendarview
         // Set start and end of the view
         let start = "startDateTime=\(viewStart)"

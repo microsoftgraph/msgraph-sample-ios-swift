@@ -7,7 +7,8 @@
 	<key>GraphScopes</key>
 	<array>
 		<string>User.Read</string>
-		<string>Calendars.Read</string>
+		<string>MailboxSettings.Read</string>
+		<string>Calendars.ReadWrite</string>
 	</array>
 </dict>
 </plist>

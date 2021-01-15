@@ -3,18 +3,17 @@
 //  GraphTutorial
 //
 //  Copyright (c) Microsoft. All rights reserved.
-//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+//  Licensed under the MIT license.
 //
 
 import UIKit
 import MSGraphClientModels
 
 class WelcomeViewController: UIViewController {
-
     @IBOutlet var userProfilePhoto: UIImageView!
     @IBOutlet var userDisplayName: UILabel!
     @IBOutlet var userEmail: UILabel!
-    
+
     private let spinner = SpinnerViewController()
 
     // <ViewDidLoadSnippet>
@@ -47,11 +46,14 @@ class WelcomeViewController: UIViewController {
                 // Personal accounts have email in the userPrincipalName attribute
                 self.userEmail.text = currentUser.mail ?? currentUser.userPrincipalName ?? ""
                 self.userEmail.sizeToFit()
+                
+                // Save the user's time zone
+                GraphManager.instance.userTimeZone = currentUser.mailboxSettings?.timeZone ?? "UTC"
             }
         }
     }
     // </ViewDidLoadSnippet>
-
+    
     // <SignOutSnippet>
     @IBAction func signOut() {
         AuthenticationManager.instance.signOut()

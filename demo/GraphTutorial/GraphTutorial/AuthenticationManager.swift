@@ -3,7 +3,7 @@
 //  GraphTutorial
 //
 //  Copyright (c) Microsoft. All rights reserved.
-//  Licensed under the MIT license. See LICENSE.txt in the project root for license information.
+//  Licensed under the MIT license.
 //
 
 // <AuthManagerSnippet>
@@ -46,7 +46,7 @@ class AuthenticationManager: NSObject, MSAuthenticationProvider {
     }
 
     public func getTokenInteractively(parentView: UIViewController, completion: @escaping(_ accessToken: String?, Error?) -> Void) {
-        let webParameters = MSALWebviewParameters(parentViewController: parentView)
+        let webParameters = MSALWebviewParameters(authPresentationViewController: parentView)
         let interactiveParameters = MSALInteractiveTokenParameters(scopes: self.graphScopes,
                                                                    webviewParameters: webParameters)
         interactiveParameters.promptType = MSALPromptType.selectAccount
