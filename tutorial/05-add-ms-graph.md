@@ -135,7 +135,7 @@ Now you can replace the JSON dump with something to display the results in a use
 
     :::code language="swift" source="../demo/GraphTutorial/GraphTutorial/CalendarTableViewCell.swift" id="PropertiesSnippet":::
 
-1. Open **Main.storyboard** and locate the **Calendar Scene**. Delete the text view from the root view.
+1. Open **Main.storyboard** and locate the **Calendar Scene**. Delete the scroll view from the root view.
 1. Using the **Library**, add a **Navigation Bar** to the top of the view.
 1. Double-click the **Title** in the navigation bar and update it to `Calendar`.
 1. Using the **Library**, add a **Bar Button Item** to the right-hand side of the navigation bar.
@@ -184,7 +184,7 @@ Now you can replace the JSON dump with something to display the results in a use
         - Add constraint: Top space to Organizer Label Bottom, value: Standard
         - Add constraint: Bottom space to Content View Bottom Margin, value: 0
 
-1. Select the **Calendar Table View Cell**, then select the **Size Inspector**. Enable **Automatic** for **Row Height**.
+1. Select the **EventCell**, then select the **Size Inspector**. Enable **Automatic** for **Row Height**.
 
     ![A screenshot of the calendar and calendar table view controllers](images/calendar-table-storyboard.png)
 
