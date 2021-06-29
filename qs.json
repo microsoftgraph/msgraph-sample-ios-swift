@@ -1,6 +1,6 @@
 {
   "sourceDirectory": ".\\demo",
-  "exampleConfigFile": ".\\GraphTutorial\\GraphTutorial\\AuthSettings.plist.example",
+  "exampleConfigFile": ".\\GraphTutorial\\GraphTutorial\\AuthSettings.example.plist",
   "configFile": "AuthSettings.plist",
   "archiveFile": "SwiftQuickStart.zip",
   "zipReadMe": ".\\README.md"
