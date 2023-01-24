@@ -11,6 +11,8 @@ languages:
 
 # Microsoft Graph sample iOS Swift app
 
+[![Xcode - Build and Analyze](https://github.com/microsoftgraph/msgraph-training-ios-swift/actions/workflows/xcode.yml/badge.svg)](https://github.com/microsoftgraph/msgraph-training-ios-swift/actions/workflows/xcode.yml) ![License.](https://img.shields.io/badge/license-MIT-green.svg)
+
 This sample demonstrates how to use the Microsoft Graph Objective-C SDK with Swift to access data in Office 365 from native mobile iOS applications.
 
 > **NOTE:** This sample was originally built from a tutorial published on the [Microsoft Graph tutorials](https://docs.microsoft.com/graph/tutorials) page. That tutorial has been removed.
