@@ -6,7 +6,7 @@ products:
 - microsoft-graph-calendar-api
 - office-exchange-online
 languages:
-- java
+- swift
 ---
 
 # Microsoft Graph sample iOS Swift app
